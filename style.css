@@ -1,0 +1,144 @@
+@font-face {
+    font-family: "Pixelfly";
+    src: url(Pixelify_Sans/PixelifySans-VariableFont_wght.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+body {
+    margin: 0; /* Verhindert weiße Ränder ganz außen */
+    padding: 0;
+    background-color: #4e1880;
+    font-family: sans-serif; /* Fallback-Schrift für normalen Text */
+    color: #fff;
+
+}
+
+/* 1. DIE FESTE NAVBAR (Klassenname an HTML angepasst) */
+.unified-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 190px; 
+    background-color: #9ec265; /* Dein Farbcode */
+    padding: 25px 40px 0 40px;
+    box-sizing: border-box;
+    
+    /* WICHTIG: Hält die Bar fest oben am Bildschirm */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; /* Höchste Ebene, damit sie über allem liegt */
+
+    /* Der Ausschnitt (Enger und weiter nach unten gezogen) */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 52% 25%, 48% 25%, 0% 65%);
+}
+
+/* 2. DER SCROLLBARE INHALT DAHINTER */
+.scroll-content {
+    width: 100%;
+    min-height: 200vh; /* Macht die Seite extra lang, damit du das Scrollen testen kannst */
+    position: relative;
+    z-index: 1; /* Niedrigere Ebene, läuft unter der Navbar durch */
+    background-color: #4a157d; /* Das dunkle Lila im Hintergrund */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container für deine Titel, damit sie unter der Navbar starten */
+.hero-text-box {
+    margin-top: 200px; /* Schiebt die Schrift nach unten, damit sie nicht von der Navbar verdeckt wird */
+    text-align: center;
+}
+
+/* --- LOGO & LINK STYLINGS --- */
+.logo-area, .links-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: #111;
+    font-size: 24px;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: "Pixelfly"; /* Nutzt deine Pixelfly-Schrift fürs Logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #111;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+.nav-links,a {
+    font-family: "Pixelfly";
+}
+/* --- TYPOGRAFIE STYLING --- */
+h1, h2{
+    font-family: "Pixelfly"; /* Wendet die Schrift auch auf die Navigation an */
+    color: #9ec265;
+    font-size: 40px;
+    margin-top: 200px;
+}
+
+#titel {
+    color: #fff;
+    text-align: center;
+    font-size: 90px; /* Etwas größer für den fetten Gaming-Look */
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#titel2 {
+    text-align: center;
+    color: #9ec265;
+    font-size: 50px;
+    margin: 0;
+    text-transform: uppercase;
+}
+button {
+    font-family: "Pixelfly";
+    background-color: #9ec265; /* Dein Grünton */
+    color: #111; /* Dunkler, lesbarer Text auf grünem Grund */
+    
+    /* Perfekt abgerundete Ecken statt verzerrter Prozentwerte */
+    border-radius: 8px; 
+    border: none; /* Entfernt den hässlichen Standard-Rahmen */
+    
+    /* Innenabstände: oben/unten 12px, links/rechts 24px */
+    padding: 12px 24px; 
+    
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase; /* Macht den Text zu Großbuchstaben */
+    cursor: pointer; /* Zeigt die Klick-Hand an, wenn man drüberfährt */
+    
+    overflow: hidden;   
+    transition: all 0.2s ease; /* Macht den Wechsel beim Hovern flüssig */
+}
+
+/* Wenn man den Button anklickt */
+button:active {
+    transform: translateY(0); /* Geht beim Klick wieder nach unten */
+}
+img{
+    border-radius: 16px;
+}
